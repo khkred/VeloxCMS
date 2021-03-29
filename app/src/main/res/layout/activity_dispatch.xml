@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DispatchActivity">
+
+    <TextView
+        android:id="@+id/dispatch_title_tv"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:text="Dispatch Form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:layout_below="@id/dispatch_title_tv"
+        android:id="@+id/dispatch_date_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dispatch Date:" />
+
+    <TextView
+        android:id="@+id/dispatch_time_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_below="@id/dispatch_date_label_tv"
+        android:text="Dispatch Time:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_below="@id/dispatch_time_label_tv"
+        android:id="@+id/d_hdd_sn_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dispatch HDD SN Size:" />
+
+    <TextView
+        android:id="@+id/d_authorised_agent_label_tv"
+        android:text="Authorised Agent:"
+        android:layout_below="@id/d_hdd_sn_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/d_submit_btn"
+        android:text="Submit"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/d_authorised_agent_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</RelativeLayout>

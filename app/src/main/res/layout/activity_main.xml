@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Hard disk Form"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/encoding_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text_view"
+        android:text="Encoding For:" />
+
+    <TextView
+        android:id="@+id/received_date_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/encoding_label_tv"
+        android:text="Received Date:" />
+
+    <TextView
+        android:id="@+id/received_time_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/received_date_label_tv"
+        android:text="Received Time:" />
+
+    <TextView
+        android:id="@+id/film_name_label"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/received_time_label_tv"
+        android:text="Film Name:" />
+
+    <TextView
+        android:id="@+id/production_company_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/film_name_label"
+        android:text="Production Company:" />
+
+    <TextView
+        android:id="@+id/authorised_agent_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/production_company_label_tv"
+        android:text="Authorised Agent:" />
+
+    <TextView
+        android:id="@+id/reel_format_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/authorised_agent_label_tv"
+        android:text="Reel Format:" />
+
+    <TextView
+        android:id="@+id/reel_wise_duration_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reel_format_label_tv"
+        android:text="Reel Wise Duration:" />
+
+    <TextView
+        android:id="@+id/total_duration_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reel_wise_duration_label_tv"
+        android:text="Total Duration:" />
+
+    <TextView
+        android:id="@+id/r_hdd_sn_label_tv"
+        style="@style/hard_disk_form_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/total_duration_label_tv"
+        android:text="Received HDD SN Size:" />
+
+
+
+    <Button
+        android:id="@+id/r_submit_btn"
+        android:text="Submit"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/r_hdd_sn_label_tv"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+<!--    Right Side Fields from now on-->
+
+    <Spinner
+        android:id="@+id/encoding_spinner"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@id/encoding_label_tv"
+        android:layout_toRightOf="@id/encoding_label_tv"
+        android:layout_marginLeft="8dp"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
