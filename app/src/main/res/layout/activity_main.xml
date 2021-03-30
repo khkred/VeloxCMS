@@ -1,219 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/title_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Hard disk Form"
-        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Hard disk Form"
+            android:textSize="30sp" />
 
 
-    <TextView
-        android:id="@+id/encoding_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_text_view"
-        android:text="Encoding For:" />
+        <TextView
+            android:id="@+id/encoding_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_text_view"
+            android:text="Encoding For:" />
 
-    <TextView
-        android:id="@+id/received_date_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/encoding_label_tv"
-        android:text="Received Date:" />
+        <TextView
+            android:id="@+id/received_date_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/encoding_label_tv"
+            android:text="Received Date:" />
 
-    <TextView
-        android:id="@+id/received_time_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/received_date_label_tv"
-        android:text="Received Time:" />
+        <TextView
+            android:id="@+id/received_time_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/received_date_label_tv"
+            android:text="Received Time:" />
 
-    <TextView
-        android:id="@+id/film_name_label"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/received_time_label_tv"
-        android:text="Film Name:" />
+        <TextView
+            android:id="@+id/film_name_label"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/received_time_label_tv"
+            android:text="Film Name:" />
 
-    <TextView
-        android:id="@+id/production_company_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/film_name_label"
-        android:text="Production Company:" />
+        <TextView
+            android:id="@+id/production_company_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/film_name_label"
+            android:text="Production Company:" />
 
-    <TextView
-        android:id="@+id/authorised_agent_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/production_company_label_tv"
-        android:text="Authorised Agent:" />
+        <TextView
+            android:id="@+id/authorised_agent_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/production_company_label_tv"
+            android:text="Authorised Agent:" />
 
-    <TextView
-        android:id="@+id/reel_format_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/authorised_agent_label_tv"
-        android:text="Reel Format:" />
-
-    <TextView
-        android:id="@+id/reel_wise_duration_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/reel_format_label_tv"
-        android:text="Reel Wise Duration:" />
-
-    <TextView
-        android:id="@+id/total_duration_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/reel_wise_duration_label_tv"
-        android:text="Total Duration:" />
-
-    <TextView
-        android:id="@+id/r_hdd_sn_label_tv"
-        style="@style/hard_disk_form_labels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/total_duration_label_tv"
-        android:text="Received HDD SN Size:" />
+        <TextView
+            android:id="@+id/reel_format_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/authorised_agent_label_tv"
+            android:text="Reel Format:" />
 
 
-    <Button
-        android:id="@+id/r_submit_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/r_hdd_sn_label_tv"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Submit" />
+        <TextView
+            android:id="@+id/total_duration_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reels_linear_layout"
+            android:text="Total Duration:" />
+
+        <TextView
+            android:id="@+id/r_hdd_sn_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/total_duration_label_tv"
+            android:text="Received HDD SN Size:" />
 
 
-    <!--    Right Side Fields from now on-->
-
-    <Spinner
-        android:id="@+id/encoding_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/encoding_label_tv"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/encoding_label_tv" />
-
-    <EditText
-        android:id="@+id/film_name_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/film_name_label"
-        android:layout_toEndOf="@id/film_name_label"
-        android:layout_toRightOf="@id/film_name_label"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/production_company_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/production_company_label_tv"
-        android:layout_toEndOf="@id/production_company_label_tv"
-        android:layout_toRightOf="@id/production_company_label_tv"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/r_submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/r_hdd_sn_label_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Submit" />
 
 
-    <EditText
-        android:id="@+id/authorised_agent_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/authorised_agent_label_tv"
-        android:layout_toEndOf="@id/authorised_agent_label_tv"
-        android:layout_toRightOf="@id/authorised_agent_label_tv"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <!--    Right Side Fields from now on-->
 
-    <EditText
-        android:id="@+id/reel_format_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/reel_format_label_tv"
-        android:layout_toEndOf="@id/reel_format_label_tv"
-        android:layout_toRightOf="@id/reel_format_label_tv"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <Spinner
+            android:id="@+id/encoding_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/encoding_label_tv"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/encoding_label_tv" />
 
-    <EditText
-        android:id="@+id/reel_wise_duration_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/reel_wise_duration_label_tv"
-        android:layout_toEndOf="@id/reel_wise_duration_label_tv"
-        android:layout_toRightOf="@id/reel_wise_duration_label_tv"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/film_name_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/film_name_label"
+            android:layout_toEndOf="@id/film_name_label"
+            android:layout_toRightOf="@id/film_name_label"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/total_duration_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/total_duration_label_tv"
-        android:layout_toEndOf="@id/total_duration_label_tv"
-        android:layout_toRightOf="@id/total_duration_label_tv"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/r_hdd_sn_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/r_hdd_sn_label_tv"
-        android:layout_toEndOf="@id/r_hdd_sn_label_tv"
-        android:layout_toRightOf="@id/r_hdd_sn_label_tv"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/production_company_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/production_company_label_tv"
+            android:layout_toEndOf="@id/production_company_label_tv"
+            android:layout_toRightOf="@id/production_company_label_tv"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
 
-    <EditText
-        android:id="@+id/received_date_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/received_date_label_tv"
-        android:layout_toRightOf="@id/received_date_label_tv"
-        android:clickable="false"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="Select Date" />
+        <EditText
+            android:id="@+id/authorised_agent_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/authorised_agent_label_tv"
+            android:layout_toEndOf="@id/authorised_agent_label_tv"
+            android:layout_toRightOf="@id/authorised_agent_label_tv"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/received_time_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/received_time_label_tv"
-        android:layout_toRightOf="@id/received_time_label_tv"
-        android:clickable="false"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="Pick Time" />
+        <EditText
+            android:id="@+id/reel_format_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/reel_format_label_tv"
+            android:layout_toEndOf="@id/reel_format_label_tv"
+            android:layout_toRightOf="@id/reel_format_label_tv"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/total_duration_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/total_duration_label_tv"
+            android:layout_toEndOf="@id/total_duration_label_tv"
+            android:layout_toRightOf="@id/total_duration_label_tv"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/r_hdd_sn_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/r_hdd_sn_label_tv"
+            android:layout_toEndOf="@id/r_hdd_sn_label_tv"
+            android:layout_toRightOf="@id/r_hdd_sn_label_tv"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+
+        <EditText
+            android:id="@+id/received_date_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/received_date_label_tv"
+            android:layout_toRightOf="@id/received_date_label_tv"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Select Date" />
+
+        <EditText
+            android:id="@+id/received_time_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/received_time_label_tv"
+            android:layout_toRightOf="@id/received_time_label_tv"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Pick Time" />
+
+
+        <!--    Let's Make edits for the reel wise durations-->
+
+
+        <TextView
+            android:id="@+id/reel_wise_duration_label_tv"
+            style="@style/hard_disk_form_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reel_format_label_tv"
+            android:text="Reel Wise Duration:" />
+
+        <Button
+            android:id="@+id/add_reel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reel_wise_duration_label_tv"
+            android:layout_marginLeft="30dp"
+            android:text="Add Reel" />
+
+        <Button
+            android:id="@+id/remove_reel_btn"
+            android:text="Remove Reel"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_alignTop="@id/add_reel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/reels_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_reel_btn"
+            android:orientation="vertical" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
 
 
 

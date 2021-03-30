@@ -10,7 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -20,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
     Spinner encodingSpinner;
 
+    LinearLayout reelsLayout;
+
+
+
+    private int noOfReels=0;
 
 
     @Override
@@ -67,6 +75,35 @@ public class MainActivity extends AppCompatActivity {
                openDatePicker(receivedDateEditText);
             }
         });
+
+        reelsLayout = findViewById(R.id.reels_linear_layout);
+
+
+        //Let's get the Add reels Button, when it is clicked it should open more reels
+        Button addReelBtn = findViewById(R.id.add_reel_btn);
+
+        addReelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                addReels();
+            }
+        });
+
+
+        // Similarly when the Remove Reel Button is clicked ,it should remove a field.
+        Button removeReelBtn = findViewById(R.id.remove_reel_btn);
+
+        removeReelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                removeReels();
+
+
+            }
+        });
+
 
 
 
@@ -120,6 +157,66 @@ public class MainActivity extends AppCompatActivity {
         mDatePickerDialog.show();
 
 
+    }
+
+
+    /**
+     * The following method is used for adding Edit Fields for Reels
+     */
+
+
+    public void addReels()
+    {
+        noOfReels++;
+
+        if (noOfReels>12)
+        {
+            Toast.makeText(this,"Max no of Reels Reached",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
+       EditText  reelEditText = new EditText(this);
+
+        //We are creating this layout Params because we need to se the width and height of the edit text fields
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+        reelEditText.setLayoutParams(layoutParams);
+
+        reelEditText.setId(noOfReels);
+
+        //Let's set the hint to the current reel number
+
+        String currentReel = "Reel "+noOfReels;
+
+        reelEditText.setHint(currentReel);
+
+        reelsLayout.addView(reelEditText);
+
+
+    }
+
+    /**
+     * The following method is used for removing Edit Fields for Reels
+     */
+
+    public void removeReels()
+    {
+        if (noOfReels<=0)
+        {
+            Toast.makeText(this,"No Reels Available",Toast.LENGTH_SHORT).show();
+
+            return;
+        }
+        EditText removalEditText = findViewById(noOfReels);
+
+        removalEditText.getText().clear();
+
+        removalEditText.setVisibility(View.GONE);
+
+        noOfReels--;
     }
 
 }
