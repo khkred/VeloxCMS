@@ -167,15 +167,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void addReels()
     {
-        noOfReels++;
 
-        if (noOfReels>12)
+
+        if (noOfReels>=12)
         {
             Toast.makeText(this,"Max no of Reels Reached",Toast.LENGTH_SHORT).show();
             return;
         }
 
-
+        noOfReels++;
 
        EditText  reelEditText = new EditText(this);
 
