@@ -3,6 +3,7 @@ package com.fsemicolon.veloxcms;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -63,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
          */
 
         //Let's try to get the date picker when edit text is clicked
-
-
         EditText receivedDateEditText = findViewById(R.id.received_date_edit_text);
 
 
@@ -73,6 +73,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                openDatePicker(receivedDateEditText);
+            }
+        });
+
+
+
+        //Let's try to get the time picker when time edit text is clicked
+        EditText receivedTimeEditText = findViewById(R.id.received_time_edit_text);
+
+        receivedTimeEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openTimePicker(receivedTimeEditText);
             }
         });
 
@@ -157,6 +170,54 @@ public class MainActivity extends AppCompatActivity {
         mDatePickerDialog.show();
 
 
+    }
+
+    /**
+     * The following method is used for getting the time picker
+     */
+
+    public void openTimePicker(EditText editText)
+    {
+
+        Calendar calendar = Calendar.getInstance();
+
+        //Let's get the current time from our Calendar
+
+        int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+
+        int minutes = calendar.get(Calendar.MINUTE);
+
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                String amPm = null;
+
+                if (calendar.get(Calendar.AM_PM)== Calendar.AM)
+                {
+                    amPm = " AM";
+                }
+                else if (calendar.get(Calendar.AM_PM)==Calendar.PM)
+                {
+                    amPm = " PM";
+                }
+
+                if (hourOfDay>=13)
+                {
+                    hourOfDay = hourOfDay-12;
+                }
+
+             String currentTime = String.format("%02d:%02d",hourOfDay,minute) + amPm;
+
+                editText.setText(currentTime);
+
+
+            }
+        },hourOfDay,minutes,false);
+
+
+        timePickerDialog.show();
     }
 
 

@@ -106,16 +106,33 @@ public class DispatchActivity extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                //TODO: FIGURE OUT TIME
+                String amPm = null;
 
-//                String currentTime = String.format("%02d:%02d",hourOfDay,minute);
+                if (calendar.get(Calendar.AM_PM)== Calendar.AM)
+                {
+                    amPm = " AM";
+                }
+                else if (calendar.get(Calendar.AM_PM)==Calendar.PM)
+                {
+                    amPm = " PM";
+                }
 
-                editText.setText(hourOfDay+":"+minute);
+                if (hourOfDay>=13)
+                {
+                    hourOfDay = hourOfDay-12;
+                }
+
+                String currentTime = String.format("%02d:%02d",hourOfDay,minute) + amPm;
+
+                editText.setText(currentTime);
+
+
             }
         },hourOfDay,minutes,false);
 
 
         timePickerDialog.show();
     }
+
 
 }
