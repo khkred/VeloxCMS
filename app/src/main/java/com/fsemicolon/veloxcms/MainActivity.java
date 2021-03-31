@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
     LinearLayout reelsLayout;
 
+    //Create Variables for Everything
+
+    private EditText mFilmNameET,mProductionCompanyET,mAuthorisedAgentET,mReelFormatET,mTotalDurationET,mRHddSnoET,mRHddSizeET;
+
+
+    private String mEncodingFor,mReceivedDate,mReceivedTime,mFilmName,mProductionCompany,mAuthorisedAgent,mReelFormat,mTotalDuration,mRHddSno,mRHddSize;
+    private ArrayList<String> mReelWiseDuration;
+
+
 
 
     private int noOfReels=0;
@@ -36,6 +46,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /**
+         * Give ids for regular variables
+         */
+
+        mFilmNameET = findViewById(R.id.film_name_edit_text);
+        mFilmName = mFilmNameET.getText().toString();
+
+        mProductionCompanyET = findViewById(R.id.production_company_edit_text);
+        mProductionCompany = mProductionCompanyET.getText().toString();
+
+        mAuthorisedAgentET = findViewById(R.id.authorised_agent_edit_text);
+        mAuthorisedAgent = mAuthorisedAgentET.getText().toString();
+
+        mReelFormatET = findViewById(R.id.reel_format_edit_text);
+        mReelFormat = mReelFormatET.getText().toString();
+
+        mTotalDurationET = findViewById(R.id.total_duration_edit_text);
+        mTotalDuration = mTotalDurationET.getText().toString();
+
+        mRHddSnoET = findViewById(R.id.r_hdd_sn_edit_text);
+        mRHddSno = mRHddSnoET.getText().toString();
+
+        mRHddSizeET = findViewById(R.id.r_hdd_size_edit_text);
+        mRHddSize = mRHddSizeET.getText().toString();
+
 
         rSubmitButton = findViewById(R.id.r_submit_btn);
 
@@ -58,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
         //Apply this adapter to the spinner
 
         encodingSpinner.setAdapter(spinnerAdapter);
+
+
+        //WE have to get the selected Item Text
+
+        mEncodingFor = encodingSpinner.getSelectedItem().toString();
 
 
         /**
@@ -125,10 +166,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //First we have to get the text from the Reel Edit Texts
 
-                Intent intent = new Intent(MainActivity.this,DispatchActivity.class);
+                if (noOfReels==0)
+                {
+                    Toast.makeText(MainActivity.this,"No Reels Added",Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                startActivity(intent);
+                for(int i=1;i<=noOfReels;i++)
+                {
+                    EditText currentReelET = findViewById(i);
+
+                    String currentReelDuration = currentReelET.getText().toString();
+
+                    mReelWiseDuration.add(currentReelDuration);
+                }
+
+                //Now that we got the data from the reels. WE can put all of this into the Received Form
+
+
+                ReceivedForm receivedForm = new ReceivedForm(mEncodingFor,mReceivedDate,mReceivedTime,mFilmName,mProductionCompany,
+                        mAuthorisedAgent,mReelFormat,mTotalDuration,mRHddSno,mRHddSize,mReelWiseDuration);
+
+
+
             }
         });
     }
@@ -164,6 +226,8 @@ public class MainActivity extends AppCompatActivity {
                 String selectedDate = dayOfMonth+ "/" +(month+1)+ "/"+year;
 
                 editText.setText(selectedDate);
+
+                mReceivedDate = selectedDate;
             }
         },year,month,dayOfMonth);
 
@@ -209,6 +273,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
              String currentTime = String.format("%02d:%02d",hourOfDay,minute) + amPm;
+
+                mReceivedTime = currentTime;
 
                 editText.setText(currentTime);
 
@@ -257,9 +323,10 @@ public class MainActivity extends AppCompatActivity {
         reelEditText.setText("00:00:00:00");
 
 
-
-
         reelsLayout.addView(reelEditText);
+
+
+
 
 
 
