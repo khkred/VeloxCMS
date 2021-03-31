@@ -252,9 +252,16 @@ public class MainActivity extends AppCompatActivity {
 
         String currentReel = "Reel "+noOfReels;
 
-        reelEditText.setHint(currentReel);
+//        reelEditText.setHint(currentReel);
+
+        reelEditText.setText("00:00:00:00");
+
+
+
 
         reelsLayout.addView(reelEditText);
+
+
 
 
     }
