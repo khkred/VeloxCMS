@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -14,14 +15,28 @@ import java.util.Calendar;
 
 public class DispatchActivity extends AppCompatActivity {
 
+    private EditText mDHddSnoET,mDHddSizeET,mDAuthorisedAgentET;
+
+    private String mDispatchDate, mDispatchTime,mDHddSno,mDHddSize,mDAuthorisedAgent;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dispatch);
 
+        //Find view by ids for Regular Fields
+
+        mDHddSnoET = findViewById(R.id.d_hdd_sn_edit_text);
+        mDHddSno = mDHddSnoET.getText().toString();
+
+        mDHddSizeET = findViewById(R.id.d_hdd_size_edit_text);
+        mDHddSize = mDHddSizeET.getText().toString();
+
+        mDAuthorisedAgentET = findViewById(R.id.d_authorised_agent_edit_text);
+        mDAuthorisedAgent = mDAuthorisedAgentET.getText().toString();
+
         //Let's get the Date Picker for dispatched Date
-
-
         EditText dispatchDateEditText = findViewById(R.id.dispatch_date_edit_text);
 
         dispatchDateEditText.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +58,16 @@ public class DispatchActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 openTimePicker(dispatchTimeEditText);
+            }
+        });
+
+        Button dSubmitBtn = findViewById(R.id.d_submit_btn);
+
+        dSubmitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DispatchedForm dispatchedForm = new DispatchedForm(mDispatchDate,mDispatchTime,mDHddSno,mDHddSize,mDAuthorisedAgent);
             }
         });
 
@@ -77,6 +102,8 @@ public class DispatchActivity extends AppCompatActivity {
                 //ONCE THE DATE IS SELECTED WE SHOULD SHOW IT IN OUR EDIT TEXT
 
                 String selectedDate = dayOfMonth+ "/" +(month+1)+ "/"+year;
+
+                mDispatchDate = selectedDate;
 
                 editText.setText(selectedDate);
             }
@@ -123,6 +150,8 @@ public class DispatchActivity extends AppCompatActivity {
                 }
 
                 String currentTime = String.format("%02d:%02d",hourOfDay,minute) + amPm;
+
+                mDispatchTime = currentTime;
 
                 editText.setText(currentTime);
 
