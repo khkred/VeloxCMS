@@ -2,37 +2,47 @@ package com.fsemicolon.veloxcms;
 
 public class DispatchedForm {
 
-    private String mDispatchedDate,mDispatchedTime,mDHddSnSize,mDAuthorisedAgent;
+    private String mDispatchDate, mDispatchTime,mDHddSno,mDHddSize,mDAuthorisedAgent;
 
-    public DispatchedForm(String dispatchedDate, String dispatchedTime, String DHddSnSize, String DAuthorisedAgent) {
-        mDispatchedDate = dispatchedDate;
-        mDispatchedTime = dispatchedTime;
-        mDHddSnSize = DHddSnSize;
+    public DispatchedForm(String dispatchDate, String dispatchTime, String DHddSno, String DHddSize, String DAuthorisedAgent) {
+        mDispatchDate = dispatchDate;
+        mDispatchTime = dispatchTime;
+        mDHddSno = DHddSno;
+        mDHddSize = DHddSize;
         mDAuthorisedAgent = DAuthorisedAgent;
     }
 
-    public String getDispatchedDate() {
-        return mDispatchedDate;
+
+    public String getDispatchDate() {
+        return mDispatchDate;
     }
 
-    public void setDispatchedDate(String dispatchedDate) {
-        mDispatchedDate = dispatchedDate;
+    public void setDispatchDate(String dispatchDate) {
+        mDispatchDate = dispatchDate;
     }
 
-    public String getDispatchedTime() {
-        return mDispatchedTime;
+    public String getDispatchTime() {
+        return mDispatchTime;
     }
 
-    public void setDispatchedTime(String dispatchedTime) {
-        mDispatchedTime = dispatchedTime;
+    public void setDispatchTime(String dispatchTime) {
+        mDispatchTime = dispatchTime;
     }
 
-    public String getDHddSnSize() {
-        return mDHddSnSize;
+    public String getDHddSno() {
+        return mDHddSno;
     }
 
-    public void setDHddSnSize(String DHddSnSize) {
-        mDHddSnSize = DHddSnSize;
+    public void setDHddSno(String DHddSno) {
+        mDHddSno = DHddSno;
+    }
+
+    public String getDHddSize() {
+        return mDHddSize;
+    }
+
+    public void setDHddSize(String DHddSize) {
+        mDHddSize = DHddSize;
     }
 
     public String getDAuthorisedAgent() {

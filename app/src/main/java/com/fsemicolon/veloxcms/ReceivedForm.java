@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class ReceivedForm {
 
-    private String mEncodingFor,mReceivedDate,mReceivedTime,mFilmName,mProductionCompany,mAuthorisedAgent,mReelFormat,mTotalDuration,mRHddSnSize;
+    private String mEncodingFor,mReceivedDate,mReceivedTime,mFilmName,mProductionCompany,mAuthorisedAgent,mReelFormat,mTotalDuration,mRHddSno,mRHddSize;
 
     private ArrayList<String> mReelWiseDurations;
 
-    public ReceivedForm(String encodingFor, String receivedDate, String receivedTime, String filmName, String productionCompany, String authorisedAgent, String reelFormat, String totalDuration, String RHddSnSize, ArrayList<String> reelWiseDurations) {
+    public ReceivedForm(String encodingFor, String receivedDate, String receivedTime, String filmName, String productionCompany, String authorisedAgent, String reelFormat, String totalDuration, String RHddSno, String RHddSize, ArrayList<String> reelWiseDurations) {
         mEncodingFor = encodingFor;
         mReceivedDate = receivedDate;
         mReceivedTime = receivedTime;
@@ -17,9 +17,11 @@ public class ReceivedForm {
         mAuthorisedAgent = authorisedAgent;
         mReelFormat = reelFormat;
         mTotalDuration = totalDuration;
-        mRHddSnSize = RHddSnSize;
+        mRHddSno = RHddSno;
+        mRHddSize = RHddSize;
         mReelWiseDurations = reelWiseDurations;
     }
+
 
     public String getEncodingFor() {
         return mEncodingFor;
@@ -85,12 +87,20 @@ public class ReceivedForm {
         mTotalDuration = totalDuration;
     }
 
-    public String getRHddSnSize() {
-        return mRHddSnSize;
+    public String getRHddSno() {
+        return mRHddSno;
     }
 
-    public void setRHddSnSize(String RHddSnSize) {
-        mRHddSnSize = RHddSnSize;
+    public void setRHddSno(String RHddSno) {
+        mRHddSno = RHddSno;
+    }
+
+    public String getRHddSize() {
+        return mRHddSize;
+    }
+
+    public void setRHddSize(String RHddSize) {
+        mRHddSize = RHddSize;
     }
 
     public ArrayList<String> getReelWiseDurations() {
