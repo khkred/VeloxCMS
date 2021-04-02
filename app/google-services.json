@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262103354251",
+    "project_id": "velox-cms",
+    "storage_bucket": "velox-cms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262103354251:android:a1b5b9d7eb5c488d757d8e",
+        "android_client_info": {
+          "package_name": "com.fsemicolon.veloxcms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262103354251-tb7s8ue4enoraet0lkeuifmsnkf36m1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSetn_abR3W3fB3s_PGL8L85jblRHdXXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262103354251-tb7s8ue4enoraet0lkeuifmsnkf36m1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
